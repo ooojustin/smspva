@@ -16,9 +16,7 @@ class SMSRequest:
             "country": self.country.value
         }
         url = self.client._build_method_url("get_number", **params)
-        print(url)
         data = requests.get(url).json()
-        print(data)
         if data.get("response") == "1":
             self.sent = True
             self.created = time.time()
@@ -35,7 +33,6 @@ class SMSRequest:
         }
         url = self.client._build_method_url("get_sms", **params)
         data = requests.get(url).json()
-        print(data)
         response = data.get("response")
         if response == "2":
             # still pending
