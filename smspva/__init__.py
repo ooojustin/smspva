@@ -81,3 +81,6 @@ class SMSpva:
             return None
         else:
             return prices[0][0] if len(prices) else None
+
+    def request_sms(self, service, country):
+        return SMSRequest(self, service, country)
