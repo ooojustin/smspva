@@ -22,6 +22,7 @@ class SMSRequest:
             self.created = time.time()
             self.id = int(data["id"])
             self.number = data["number"]
+            self.country_code = data["CountryCode"]
         else:
             raise RuntimeError("API response code indicates failure.")
 
