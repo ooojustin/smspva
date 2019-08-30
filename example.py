@@ -13,7 +13,7 @@ country = client.get_cheapest_country(service)
 if country is not None:
     request = client.request_sms(service, country)
     request.send()
-    print(request.country_code, request.number)
+    print(request.full_number)
     print(request.run())
 else:
     print("service not available.")
